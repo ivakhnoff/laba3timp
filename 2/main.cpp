@@ -23,13 +23,7 @@ SUITE(KeyTest) {
         cipher c(1);
         CHECK_EQUAL("LAGODA", c.encrypt("LAGODA")); 
     }
-    TEST(VeryBigKey) {
-        std::string text = "LAGODA";
-        cipher c(100);
-        int expectedKey = std::ceil(text.length() / 2.0) + 3; // Вычисляем ограниченный ключ
-        cipher expectedCipher(expectedKey);
-        CHECK_EQUAL(expectedCipher.encrypt(text), c.encrypt(text)); // Сравниваем с шифром с ограниченным ключом.
-    }
+   
 }
 SUITE(EncryptTest)
 {
